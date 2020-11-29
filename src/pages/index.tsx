@@ -1,10 +1,8 @@
+import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
-import AppBar from '@material-ui/core/AppBar';
 import React from 'react';
 import SEO from '../components/SEO';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function ButtonAppBar() {
+export default function HomePage() {
   const classes = useStyles();
 
   return (
@@ -33,7 +31,9 @@ export default function ButtonAppBar() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Typography variant="h3">Time to code...</Typography>
+      <Container maxWidth="sm">
+        <Typography variant="h3">Time to code...</Typography>
+      </Container>
     </div>
   );
 }
