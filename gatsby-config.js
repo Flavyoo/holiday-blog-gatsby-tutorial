@@ -13,6 +13,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-material-ui`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogPosts`,
+        path: `${__dirname}/content/blog-posts`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Awesome Material UI Starter`,

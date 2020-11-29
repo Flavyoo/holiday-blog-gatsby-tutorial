@@ -29,6 +29,8 @@
     "gatsby-plugin-offline": "^3.3.0",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-ts-checker": "^1.1.0",
+    "gatsby-source-filesystem": "^2.6.1",
+    "gatsby-transformer-remark": "^2.11.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0"
