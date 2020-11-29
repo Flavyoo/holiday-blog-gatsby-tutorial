@@ -1,14 +1,8 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
-    title: `Awesome Material UI Starter`,
-    description: `Gatsby Starter with Material UI and TypeScript support by default.`,
-    author: `@flavyoo`,
+    title: `Holiday Blog`,
+    description: `A blog about different holidays.`,
+    author: `@awesome-developer`,
   },
   plugins: [
     `gatsby-plugin-material-ui`,
