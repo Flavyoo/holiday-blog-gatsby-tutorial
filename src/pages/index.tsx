@@ -16,6 +16,18 @@ const useStyles = makeStyles((theme: Theme) =>
     blogTitle: {
       fontWeight: theme.typography.fontWeightBold
     },
+    postList: {
+      marginTop: 50,
+    },
+    post: {
+      marginBottom: 50
+    },
+    postTitle: {
+      fontWeight: theme.typography.fontWeightBold
+    },
+    excerpt: {
+      marginTop: 20
+    }
   })
 );
 
@@ -34,6 +46,21 @@ export default function HomePage({ data }) {
         <Typography>
           {description}
         </Typography>
+        <div className={classes.postList}>
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <div key={node.id} className={classes.post}>
+              <Typography variant="h5" className={classes.postTitle}>
+                {node.frontmatter.title}
+              </Typography>
+              <Typography variant="subtitle2">
+                {`${node.frontmatter.date} - ⏰ ${node.timeToRead} min read`}
+              </Typography>
+              <Typography className={classes.excerpt}>
+                {node.excerpt}
+              </Typography>
+            </div>
+          ))}
+        </div>
       </Container>
     </div>
   );
@@ -52,8 +79,8 @@ export const query = graphql`
       edges {
         node {
           id
+          timeToRead
           frontmatter {
-            author
             date(formatString: "DD MMMM, YYYY")
             title
           }
