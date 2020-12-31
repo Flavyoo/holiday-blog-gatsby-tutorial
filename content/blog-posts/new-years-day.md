@@ -2,6 +2,7 @@
 title: 'History of New Years'
 date: '2020-11-28'
 author: 'Awesome Developer'
+featuredImage: '../featured-images/happy-new-year-2021.jpg'
 ---
 
 # What is it?
