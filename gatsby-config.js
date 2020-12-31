@@ -6,11 +6,19 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogPosts`,
         path: `${__dirname}/content/blog-posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/featured-images`,
       },
     },
     `gatsby-transformer-remark`,

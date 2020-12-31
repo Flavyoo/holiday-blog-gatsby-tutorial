@@ -2,6 +2,7 @@ import { Container, Typography } from '@material-ui/core';
 import { Link, graphql } from 'gatsby';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
+import Img from 'gatsby-image';
 import React from 'react';
 import SEO from '../components/SEO';
 
@@ -47,9 +48,17 @@ export default function HomePage({ data }) {
         <div className={classes.postList}>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <div key={node.id} className={classes.post}>
-              <Typography variant="h5" className={classes.postTitle} component={Link} to={node.fields.slug}>
+              <Typography
+                variant="h5"
+                className={classes.postTitle}
+                component={Link}
+                to={node.fields.slug}
+              >
                 {node.frontmatter.title}
               </Typography>
+              <Img
+                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+              />
               <Typography variant="subtitle2">
                 {`${node.frontmatter.date} - ⏰ ${node.timeToRead} min read`}
               </Typography>
@@ -84,6 +93,13 @@ export const query = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt
         }
