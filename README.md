@@ -2,6 +2,7 @@
 
 Includes support for:
 
+- Blogging
 - Material UI and Material UI Icons
 - TypeScript & Type Checking
 - React Helmet
@@ -10,7 +11,9 @@ Includes support for:
 
 # Create with Gatsby CLI
 
-`gatsby new project-name https://github.com/Flavyoo/awesome-material-ui-starter`
+You can get started with your blog by using this repo as a template.
+
+`gatsby new project-name https://github.com/Flavyoo/holiday-blog-gatsby-tutorial`
 
 # Development
 
